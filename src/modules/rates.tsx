@@ -1,0 +1,15 @@
+export const toUSD = [
+  { symbol: "AUD", rate: 0.648995 },
+  { symbol: "CAD", rate: 0.71388 },
+  { symbol: "CHF", rate: 1.0277228231546 },
+  { symbol: "CZK", rate: 0.039280923415948 },
+  { symbol: "GBP", rate: 1.23363 },
+  { symbol: "HUF", rate: 0.003086891361489 },
+  { symbol: "JPY", rate: 0.009289449971667 },
+  { symbol: "MXN", rate: 0.041828665602824 },
+  { symbol: "NZD", rate: 0.606995 },
+  { symbol: "SEK", rate: 0.101241217324397 },
+  { symbol: "SGD", rate: 0.705651563371039 },
+  { symbol: "USD", rate: 1 },
+  { symbol: "ZAR", rate: 0.054295006488253 },
+];

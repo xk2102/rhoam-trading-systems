@@ -1,0 +1,197 @@
+.createTicket {
+  /* BORDER */
+  border: 0px solid;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.createTicket .error {
+  text-align: center;
+  color: rgb(168, 54, 54);
+}
+
+.step {
+  /* BORDER */
+  border: 0px solid;
+  /* SIZE */
+  flex: 1;
+  /* DISPLAY */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.step > .top {
+  /* SIZE */
+  flex: 1;
+  /* BORDER */
+  border: 0px solid;
+}
+.step > .bottom {
+  /* BORDER */
+  border: 0px solid;
+}
+
+/* ---------------------------------------------- */
+/* .buttonGroup */
+/* ---------------------------------------------- */
+
+.buttonGroup {
+  /* DISPLAY */
+  display: flex;
+  flex-direction: row;
+  /* MARGIN, PADDING */
+  /* margin-top: 20px; */
+}
+
+.buttonGroup > button {
+  /* SIZE */
+  flex: 1;
+  /* MARGIN, PADDING */
+  /* margin: 5px; */
+  /* COLORS */
+  background-color: var(--colorBlack2);
+  /* BORDER */
+  border: 0px;
+  border-radius: 10px;
+  /* FONTS */
+  font-family: Quicksand-Bold;
+  color: inherit;
+  transition: background-color 100ms ease-in-out;
+}
+
+.buttonGroup > button:hover {
+  /* COLORS */
+  background-color: var(--colorBlack3);
+  transition: background-color 100ms ease-in-out;
+}
+.buttonGroup > button:active {
+  /* COLORS */
+  background-color: var(--colorBlack4);
+  transition: background-color 100ms ease-in-out;
+}
+
+.buttonGroupCol {
+  /* DISPLAY */
+  display: flex;
+  flex-direction: column;
+  /* MARGIN, PADDING */
+  /* margin-top: 20px; */
+}
+.buttonGroupCol > button {
+  /* SIZE */
+  flex: 1;
+  /* MARGIN, PADDING */
+  margin-top: 5px;
+  margin-bottom: 5px;
+  /* COLORS */
+  background-color: var(--colorBlack2);
+  /* BORDER */
+  border: 0px;
+  border-radius: 10px;
+  /* FONTS */
+  font-family: Quicksand-Bold;
+  color: inherit;
+  transition: background-color 100ms ease-in-out;
+}
+
+.buttonGroupCol > button:hover {
+  /* COLORS */
+  background-color: var(--colorBlack3);
+  transition: background-color 100ms ease-in-out;
+}
+.buttonGroupCol > button:active {
+  /* COLORS */
+  background-color: var(--colorBlack4);
+  transition: background-color 100ms ease-in-out;
+}
+/* ---------------------------------------------- */
+/* .labelInputGroup */
+/* ---------------------------------------------- */
+
+.labelInputGroup {
+  /* BORDER */
+  border: 0px solid;
+  /* DISPLAY */
+  display: flex;
+  flex-direction: column;
+  /* MARGIN, PADDING */
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.labelInputGroup label {
+  /* BORDER */
+  border: 0px solid;
+  /* MARGIN, PADDING */
+  margin-bottom: 5px;
+}
+.labelInputGroup input,
+.labelInputGroup select {
+  /* BORDER */
+  border: 2px solid var(--colorBlack2);
+  border-radius: 10px;
+  /* MARGIN, PADDING */
+  padding: 10px;
+  /* FONTS */
+  font-family: inherit;
+  font-weight: inherit;
+  /* COLORS */
+  color: inherit;
+  background-color: inherit;
+  transition: all 200ms ease-in-out;
+}
+
+option {
+  background-color: var(--colorBlack1);
+}
+
+.labelInputGroup input:focus {
+  outline: none !important;
+  /* border: 2px solid #272727; */
+  box-shadow: 0 0 4px #bdbcbc;
+  transition: all 200ms ease-in-out;
+}
+.labelInputGroup input:hover {
+  outline: none !important;
+  /* border: 2px solid #272727; */
+  box-shadow: 0 0 4px #bdbcbc;
+  transition: all 200ms ease-in-out;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* ---------------------------------------------- */
+/* .labelValueGroup */
+/* ---------------------------------------------- */
+
+.labelValueGroup {
+  /* BORDER */
+  border: 0px solid;
+  /* DISPLAY */
+  display: flex;
+  flex-direction: row;
+  /* MARGIN, PADDING */
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.labelValueGroup label {
+  flex: 1;
+  /* BORDER */
+  border: 0px solid;
+}
+.labelValueGroup span {
+  flex: 1;
+  /* BORDER */
+  border: 0px solid;
+}
