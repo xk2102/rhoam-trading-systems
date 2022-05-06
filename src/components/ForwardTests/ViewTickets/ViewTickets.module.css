@@ -1,0 +1,9 @@
+.viewTickets {
+  /* BORDER */
+  border: 0px solid;
+  /* SIZE */
+  flex: 1;
+  /* DISPLAY */
+  display: flex;
+  flex-direction: column;
+}

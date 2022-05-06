@@ -7,7 +7,7 @@ import { GlobalContext } from "../../contexts/GlobalContext";
 
 export default function Info() {
   const _GlobalContext = useContext(GlobalContext);
-  const { tickets } = _GlobalContext!;
+  const { tickets, trades } = _GlobalContext!;
 
   return (
     <div className={styles.info}>
@@ -19,7 +19,12 @@ export default function Info() {
         </Link>
         <Link to="/forwardTests/viewTickets">
           <div className={styles.groupItem}>
-            <p>{`View tickets${tickets.length > 0 ? `: ${tickets.length}` : ""}`}</p>
+            <p>{`View tickets${tickets.length > 0 ? ` (${tickets.length})` : ""}`}</p>
+          </div>
+        </Link>
+        <Link to="/forwardTests/viewTrades">
+          <div className={styles.groupItem}>
+            <p>{`View trades${trades.length > 0 ? ` (${trades.length})` : ""}`}</p>
           </div>
         </Link>
         <Link to="/forwardTests/viewPerformance">

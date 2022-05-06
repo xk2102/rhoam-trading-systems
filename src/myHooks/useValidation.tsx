@@ -30,6 +30,13 @@ export const useValidation = () => {
     if (stopOrder <= 0 || isNaN(stopOrder)) {
       return "stopOrder error..!";
     }
+    if (direction === "LONG" && stopOrder > entryOrder) {
+      return "stopOrder cannnot be above the entryOrder";
+    }
+    if (direction === "SHORT" && stopOrder < entryOrder) {
+      return "stopOrder cannnot be below the entryOrder";
+    }
+
     return "";
   };
   return { validate_createTicket_step1ToStep2, validate_createTicket_step2ToStep3 };

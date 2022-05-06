@@ -1,6 +1,21 @@
 .backTests {
+  flex: 1;
   /* BORDER */
   border: 0px solid;
   /* MARGIN, PADDING */
   padding: 10px;
+  /* DISPLAY */
+  display: flex;
+  flex-direction: column;
+}
+
+.uc {
+  flex: 1;
+  /* BORDER */
+  border: 0px solid;
+  /* DISPLAY */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

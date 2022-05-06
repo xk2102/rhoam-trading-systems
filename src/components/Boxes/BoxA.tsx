@@ -23,7 +23,10 @@ export default function BoxA() {
   // -------------------------------------------------------
   const isMobileScreen = useMediaQuery({ query: "(max-width: 600px)" });
   (function closeBoxCIfIEnlargeTheScreenWhileBeingAVeryOCDDeveloperThankYouBye() {
-    !isMobileScreen && setShowBoxC(false);
+    // bad state partial fix
+    if (showBoxC) {
+      !isMobileScreen && setShowBoxC(false);
+    }
   })();
   return (
     <div className={styles.boxA}>

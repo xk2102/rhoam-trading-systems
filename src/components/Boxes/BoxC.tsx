@@ -15,6 +15,7 @@ export default function BoxC() {
   // ROUTER ------------------------------------------------
   // -------------------------------------------------------
   const { pathname } = useLocation();
+
   return (
     <div className={`animate ${styles.boxC}`}>
       <div className={pathname === "/" ? `${styles.navItem} ${styles.active}` : `${styles.navItem}`}>

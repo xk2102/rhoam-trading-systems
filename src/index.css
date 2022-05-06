@@ -60,6 +60,20 @@ a {
   color: inherit;
 }
 
+#link {
+  /* BORDER */
+  border: 0px;
+  /* COLORS */
+  background-color: transparent;
+  color: rgb(63, 81, 181);
+  /* FONTS */
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  /* OTHER */
+  cursor: pointer;
+}
+
 /* ----------- */
 /* -img ----- */
 /* ----------- */
@@ -70,6 +84,10 @@ a {
 #img-container img {
   border-radius: 10px;
   width: 90%;
+}
+
+#tip {
+  color: #707070;
 }
 
 @media (min-width: 600px) {

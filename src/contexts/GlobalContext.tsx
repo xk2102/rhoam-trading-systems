@@ -1,5 +1,46 @@
 import React, { useState, createContext, useEffect } from "react";
-import { ticket } from "../modules/types";
+import { ticket, trade } from "../modules/types";
+
+const mockData = [
+  {
+    commission: -11,
+    contracts: 11,
+    date: "2022-04-01",
+    direction: "LONG",
+    entryOrder: 1.4036,
+    entryOrderStopOrderDifference: 0.00261,
+    id: "4da1c025e33",
+    lotSize: 25000,
+    profitTargetOrder: 1.4092,
+    profitToLossRatio: 2,
+    quantity: 275000,
+    rate: 0.648995,
+    riskPerTrade: 0.005,
+    stopOrder: 1.40099,
+    symbol: "EURAUD",
+    tradingEquity: 100000,
+    units: 295181,
+  },
+  {
+    commission: -11,
+    contracts: 11,
+    date: "2022-04-01",
+    direction: "LONG",
+    entryOrder: 1.4036,
+    entryOrderStopOrderDifference: 0.00261,
+    id: "4da1c025e34",
+    lotSize: 25000,
+    profitTargetOrder: 1.4092,
+    profitToLossRatio: 2,
+    quantity: 275000,
+    rate: 0.648995,
+    riskPerTrade: 0.005,
+    stopOrder: 1.40099,
+    symbol: "EURAUD",
+    tradingEquity: 100000,
+    units: 295181,
+  },
+];
 
 type GlobalContextProviderProps = {
   children: React.ReactNode;
@@ -12,6 +53,13 @@ type GlobalContextType = {
   pushToActionLog: (action: string) => void;
   tickets: [] | ticket[];
   setTickets: React.Dispatch<React.SetStateAction<ticket[] | []>>;
+  selectedTicket: ticket | null;
+  setSelectedTicket: React.Dispatch<React.SetStateAction<ticket | null>>;
+  trades: [] | trade[];
+  setTrades: React.Dispatch<React.SetStateAction<[] | trade[]>>;
+  selectedTrade: trade | null;
+  setSelectedTrade: React.Dispatch<React.SetStateAction<trade | null>>;
+  deleteTicketById: (ticketId: string) => void;
   // MODAL
   modalIsOpen: boolean;
   setModalIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -35,9 +83,16 @@ export const GlobalContextProvider = ({ children }: GlobalContextProviderProps) 
   const pushToActionLog = (action: string): void => {
     setActionLog((prevActionLog) => [...prevActionLog, action]);
   };
-  const [tickets, setTickets] = useState<ticket[] | []>([]);
-  useEffect(() => console.log(tickets), [tickets]);
+  const [tickets, setTickets] = useState<ticket[] | []>(mockData);
+  const [selectedTicket, setSelectedTicket] = useState<ticket | null>(null);
+  const [trades, setTrades] = useState<trade[] | []>([]);
+  const [selectedTrade, setSelectedTrade] = useState<trade | null>(null);
 
+  function deleteTicketById(ticketId: string): void {
+    let _tickets = tickets;
+    _tickets = _tickets.filter((obj) => obj.id !== ticketId);
+    setTickets(_tickets);
+  }
   // ------------------------------------------------------
   // --MODAL-----------------------------------------------
   // ------------------------------------------------------
@@ -66,6 +121,13 @@ export const GlobalContextProvider = ({ children }: GlobalContextProviderProps) 
         pushToActionLog,
         tickets,
         setTickets,
+        selectedTicket,
+        setSelectedTicket,
+        trades,
+        setTrades,
+        selectedTrade,
+        setSelectedTrade,
+        deleteTicketById,
         // MODAL
         modalIsOpen,
         setModalIsOpen,

@@ -1,0 +1,23 @@
+.trade {
+  /* BORDER */
+  border: 0px solid;
+  border-radius: 10px;
+  /* MARGIN, PADDING */
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  /* COLORS */
+  background-color: var(--colorBlack2);
+  transition: background-color 100ms ease-in-out;
+}
+
+.trade:hover {
+  /* COLORS */
+  background-color: var(--colorBlack3);
+  transition: background-color 100ms ease-in-out;
+}
+.trade:active {
+  /* COLORS */
+  background-color: var(--colorBlack4);
+  transition: background-color 100ms ease-in-out;
+}

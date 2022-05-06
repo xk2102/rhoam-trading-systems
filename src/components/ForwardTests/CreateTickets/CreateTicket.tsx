@@ -1,12 +1,13 @@
-import { useEffect, useState, useContext } from "react";
-import { symbols } from "../../modules/symbols";
+import { useState, useContext } from "react";
+import { symbols } from "../../../modules/symbols";
 import styles from "./CreateTicket.module.css";
 import { uid } from "uid";
-import { useValidation } from "../../myHooks/useValidation";
-import { emptyInputs } from "../../modules/empties";
-import { useTicketCalculations } from "../../myHooks/useTicketCalculations";
-import { toUSD } from "../../modules/rates";
-import { GlobalContext } from "../../contexts/GlobalContext";
+import { useValidation } from "../../../myHooks/useValidation";
+import { emptyInputs } from "../../../modules/empties";
+import { useTicketCalculations } from "../../../myHooks/useTicketCalculations";
+import { toUSD } from "../../../modules/rates";
+import { GlobalContext } from "../../../contexts/GlobalContext";
+import { useNavigate } from "react-router-dom";
 
 export default function CreateTicket() {
   const { validate_createTicket_step1ToStep2, validate_createTicket_step2ToStep3 } = useValidation();
@@ -30,6 +31,7 @@ export default function CreateTicket() {
   const [error, setError] = useState<string>("");
   const _GlobalContext = useContext(GlobalContext);
   const { tickets, setTickets } = _GlobalContext!;
+  const navigate = useNavigate();
   // // ----------------------------------------------------------------
   // // -- FORM HANDLERS -----------------------------------------------
   // // ----------------------------------------------------------------
@@ -95,7 +97,7 @@ export default function CreateTicket() {
       // prettier-ignore
       const p = calculateProfitTargetOrder(q, r, inputs.direction, inputs.entryOrder, 
         inputs.tradingEquity, inputs.riskPerTrade, inputs.profitToLossRatio);
-      const com = calculateCommission(q);
+      const com = parseFloat(calculateCommission(q).toFixed(1));
 
       setOutputs({ entryOrderStopOrderDifference: d, rate: r, units: u, contracts: c, quantity: q, profitTargetOrder: p, commission: com });
 
@@ -105,9 +107,10 @@ export default function CreateTicket() {
   function onClick_saveTicket() {
     const t = { ...inputs, ...outputs };
     const _tickets = [...tickets, t];
-    console.log(t);
-    // setTickets((prevTickets) => [...prevTickets, t]);
     setTickets(_tickets);
+    setInputs(emptyInputs);
+    // setStep(1);
+    navigate("/forwardTests");
   }
   // // ----------------------------------------------------------------
   // // -- HELPER FUNCTIONS---------------------------------------------

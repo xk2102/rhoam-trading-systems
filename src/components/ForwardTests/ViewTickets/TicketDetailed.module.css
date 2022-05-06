@@ -1,0 +1,154 @@
+.ticketDetailed {
+  flex: 1;
+  /* DISPLAY */
+  display: flex;
+  flex-direction: column;
+  /* BORDER */
+  border: 0px solid;
+}
+.ticketDetailed > .top {
+  flex: 1;
+  /* BORDER */
+  border: 0px solid;
+}
+.ticketDetailed > .bottom {
+  /* BORDER */
+  border: 0px solid;
+}
+/* ---------------------------------------------- */
+/* .labelInputGroup */
+/* ---------------------------------------------- */
+
+.labelInputGroup {
+  /* BORDER */
+  border: 0px solid;
+  /* DISPLAY */
+  display: flex;
+  flex-direction: column;
+  /* MARGIN, PADDING */
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.labelInputGroup label {
+  /* BORDER */
+  border: 0px solid;
+  /* MARGIN, PADDING */
+  margin-bottom: 5px;
+}
+.labelInputGroup input,
+.labelInputGroup select {
+  /* BORDER */
+  border: 2px solid var(--colorBlack2);
+  border-radius: 10px;
+  /* MARGIN, PADDING */
+  padding: 10px;
+  /* FONTS */
+  font-family: inherit;
+  font-weight: inherit;
+  /* COLORS */
+  color: inherit;
+  background-color: inherit;
+  transition: all 200ms ease-in-out;
+}
+
+option {
+  background-color: var(--colorBlack1);
+}
+
+.labelInputGroup input:focus {
+  outline: none !important;
+  /* border: 2px solid #272727; */
+  box-shadow: 0 0 4px #bdbcbc;
+  transition: all 200ms ease-in-out;
+}
+.labelInputGroup input:hover {
+  outline: none !important;
+  /* border: 2px solid #272727; */
+  box-shadow: 0 0 4px #bdbcbc;
+  transition: all 200ms ease-in-out;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* ---------------------------------------------- */
+/* .buttonGroup */
+/* ---------------------------------------------- */
+
+.ticketDetailed > .bottom > .buttonGroup {
+  /* DISPLAY */
+  display: flex;
+  flex-direction: row;
+  /* MARGIN, PADDING */
+  margin-top: 10px;
+}
+
+.ticketDetailed > .bottom > .buttonGroup > button {
+  /* SIZE */
+  flex: 1;
+  /* MARGIN, PADDING */
+  /* margin: 5px; */
+  /* COLORS */
+  background-color: var(--colorBlack2);
+  /* BORDER */
+  border: 0px;
+  border-radius: 10px;
+  /* FONTS */
+  font-family: Quicksand-Bold;
+  color: inherit;
+  transition: background-color 100ms ease-in-out;
+}
+
+.ticketDetailed > .bottom > .buttonGroup > button:hover {
+  /* COLORS */
+  background-color: var(--colorBlack3);
+  transition: background-color 100ms ease-in-out;
+}
+.ticketDetailed > .bottom > .buttonGroup > button:active {
+  /* COLORS */
+  background-color: var(--colorBlack4);
+  transition: background-color 100ms ease-in-out;
+}
+
+.ticketDetailed > .bottom > .buttonGroupCol {
+  /* DISPLAY */
+  display: flex;
+  flex-direction: column;
+  /* MARGIN, PADDING */
+  /* margin-top: 20px; */
+}
+.ticketDetailed > .bottom > .buttonGroupCol > button {
+  /* SIZE */
+  flex: 1;
+  /* MARGIN, PADDING */
+  margin-top: 5px;
+  margin-bottom: 5px;
+  /* COLORS */
+  background-color: var(--colorBlack2);
+  /* BORDER */
+  border: 0px;
+  border-radius: 10px;
+  /* FONTS */
+  font-family: Quicksand-Bold;
+  color: inherit;
+  transition: background-color 100ms ease-in-out;
+}
+
+.ticketDetailed > .bottom > .buttonGroupCol > button:hover {
+  /* COLORS */
+  background-color: var(--colorBlack3);
+  transition: background-color 100ms ease-in-out;
+}
+.ticketDetailed > .bottom > .buttonGroupCol > button:active {
+  /* COLORS */
+  background-color: var(--colorBlack4);
+  transition: background-color 100ms ease-in-out;
+}
