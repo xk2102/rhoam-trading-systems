@@ -1,46 +1,6 @@
 import React, { useState, createContext, useEffect } from "react";
+import { demoTickets, demoTrades } from "../modules/mocks";
 import { ticket, trade } from "../modules/types";
-
-const mockData = [
-  {
-    commission: -11,
-    contracts: 11,
-    date: "2022-04-01",
-    direction: "LONG",
-    entryOrder: 1.4036,
-    entryOrderStopOrderDifference: 0.00261,
-    id: "4da1c025e33",
-    lotSize: 25000,
-    profitTargetOrder: 1.4092,
-    profitToLossRatio: 2,
-    quantity: 275000,
-    rate: 0.648995,
-    riskPerTrade: 0.005,
-    stopOrder: 1.40099,
-    symbol: "EURAUD",
-    tradingEquity: 100000,
-    units: 295181,
-  },
-  {
-    commission: -11,
-    contracts: 11,
-    date: "2022-04-01",
-    direction: "LONG",
-    entryOrder: 1.4036,
-    entryOrderStopOrderDifference: 0.00261,
-    id: "4da1c025e34",
-    lotSize: 25000,
-    profitTargetOrder: 1.4092,
-    profitToLossRatio: 2,
-    quantity: 275000,
-    rate: 0.648995,
-    riskPerTrade: 0.005,
-    stopOrder: 1.40099,
-    symbol: "EURAUD",
-    tradingEquity: 100000,
-    units: 295181,
-  },
-];
 
 type GlobalContextProviderProps = {
   children: React.ReactNode;
@@ -83,16 +43,18 @@ export const GlobalContextProvider = ({ children }: GlobalContextProviderProps) 
   const pushToActionLog = (action: string): void => {
     setActionLog((prevActionLog) => [...prevActionLog, action]);
   };
-  const [tickets, setTickets] = useState<ticket[] | []>(mockData);
+  const [tickets, setTickets] = useState<ticket[] | []>(demoTickets);
   const [selectedTicket, setSelectedTicket] = useState<ticket | null>(null);
-  const [trades, setTrades] = useState<trade[] | []>([]);
+  const [trades, setTrades] = useState<trade[] | []>(demoTrades);
   const [selectedTrade, setSelectedTrade] = useState<trade | null>(null);
 
+  useEffect(() => console.log(trades), [trades]);
   function deleteTicketById(ticketId: string): void {
     let _tickets = tickets;
     _tickets = _tickets.filter((obj) => obj.id !== ticketId);
     setTickets(_tickets);
   }
+
   // ------------------------------------------------------
   // --MODAL-----------------------------------------------
   // ------------------------------------------------------

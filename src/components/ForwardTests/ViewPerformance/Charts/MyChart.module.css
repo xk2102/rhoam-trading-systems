@@ -1,0 +1,9 @@
+.myChart {
+  /* BORDER */
+  border: 0px solid;
+  width: 90%;
+}
+
+.myChart > .label {
+  text-align: center;
+}

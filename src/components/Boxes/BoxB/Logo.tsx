@@ -32,7 +32,7 @@ export default function Logo() {
   return (
     <div className={styles.logo}>
       <div className={styles.logoIcon}>{renderLogoAccordingToSize()}</div>
-      <div className={styles.logoText}>RHOAM TRADING SYSTEMS</div>
+      <div className={styles.logoText}>RHOAM TRADING SYSTEMS [demo version]</div>
     </div>
   );
 }

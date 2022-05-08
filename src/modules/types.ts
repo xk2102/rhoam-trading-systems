@@ -61,3 +61,35 @@ export type trade = {
   sum: number;
   totalSum: number;
 };
+
+export type results = {
+  dates: string[];
+  dailySums: number[];
+  dailyEquity: number[];
+  dailyDrawdown: number[];
+  totalEntryFills: number;
+  totalStopFills: number;
+  totalProfitTargetFills: number;
+  totalExitFills: number;
+  totalWins: number;
+  totalLosses: number;
+  totalWinsDollars: number;
+  totalLossesDollars: number;
+  totalCommissions: number;
+  totalWinsPercentage: number;
+  totalLossesPercentage: number;
+  profitFactor: number;
+  profitFactorWithCommissions: number;
+  totalEntrySlippage: number;
+  totalStopSlippage: number;
+  totalProfitTargetSlippage: number;
+  startingDate: string;
+  endingDate: string;
+  startingBalance: number;
+  endingBalance: number;
+  activeMonths: number;
+  activeYears: number;
+  cagr: number;
+  maximumDrawdown: number;
+  mar: number;
+};

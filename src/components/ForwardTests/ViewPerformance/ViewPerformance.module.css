@@ -1,0 +1,39 @@
+.viewPerformance {
+  /* BORDER */
+  border: 0px solid;
+  /* SIZE */
+  flex: 1;
+  /* DISPLAY */
+  display: flex;
+  flex-direction: column;
+}
+
+.group {
+  /* BORDER */
+  border: 0px solid;
+  /* SIZE */
+  flex: 1;
+  /* DISPLAY */
+  display: flex;
+  flex-direction: row;
+}
+
+.group > .left,
+.group > .middle,
+.group > .right {
+  /* BORDER */
+  border: 2px solid var(--colorBlack2);
+  border-radius: 5px;
+  /* SIZE */
+  width: 25%;
+  /* PADDING */
+  padding: 5px 10px 5px 10px;
+  transition: background-color 150ms ease-in-out;
+  overflow: hidden;
+}
+.group > .left:hover,
+.group > .middle:hover,
+.group > .right:hover {
+  background-color: var(--colorBlack3);
+  transition: background-color 150ms ease-in-out;
+}
