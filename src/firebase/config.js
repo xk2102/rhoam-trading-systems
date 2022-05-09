@@ -2,13 +2,15 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 
+// Your web app's Firebase configuration
+
 const firebaseConfig = {
-  apiKey: "AIzaSyDgl1E5hx_mGwSLRi0yBMVsk2DfSjxxI8o",
-  authDomain: "react-firebase9-c95b9.firebaseapp.com",
-  projectId: "react-firebase9-c95b9",
-  storageBucket: "react-firebase9-c95b9.appspot.com",
-  messagingSenderId: "825145174909",
-  appId: "1:825145174909:web:118dbd50c85bd2be067a14",
+  apiKey: "AIzaSyBH_bpdqfuWtOa5hHAWvfZJLWJHKiASrAo",
+  authDomain: "rhoam-trading-systems.firebaseapp.com",
+  projectId: "rhoam-trading-systems",
+  storageBucket: "rhoam-trading-systems.appspot.com",
+  messagingSenderId: "214990121997",
+  appId: "1:214990121997:web:0486bbb43e24d4855cb944",
 };
 
 // initialize app

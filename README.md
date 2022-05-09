@@ -1,46 +1,38 @@
-# Getting Started with Create React App
+# Rhoam Trading Systems
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is an app for traders.
+A trader can back-test and forward-test a trading system.
 
-## Available Scripts
+Read more on my take on why back-testing and forward-testing a trading system should be part of a single common app.
+<https://christoskipouros.vercel.app/rhoam-trading-platform.pdf>
 
-In the project directory, you can run:
+## About the app
 
-### `npm start`
+A user can back-test and forward-test a trading system.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Back-testing
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Currently under development.
 
-### `npm test`
+### Forward-testing
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+A user can use the wizard to create **tickets**. Tickets are trades that have not been filled (executed) yet, much like orders.
 
-### `npm run build`
+<img src="pics/1.png" />
+<img src="pics/2.png" />
+<img src="pics/3.png" />
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Once a ticket has been filled, a user can input the fills. The app will add the nesecery calculations (slippages, costs etc..) and the ticket will be saved as a **trade**.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<img src="pics/4.png" />
+<img src="pics/5.png" />
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Trades are finally analyzed and a performance summary of the trading system is generated. (equity and drawdown charts as well as many stats and metrics)
 
-### `npm run eject`
+<img src="pics/6.png" />
+<img src="pics/7.png" />
+<img src="pics/8.png" />
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Merging back and forward testing
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+The app will be able to merge results from back-testing and forward-testing, and provide valuable insight on adjusting parameters to secure a more accurate image of the trading system.
