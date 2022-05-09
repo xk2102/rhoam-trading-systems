@@ -2,6 +2,7 @@
   /* BORDER */
   border: 0px solid;
   width: 90%;
+  align-self: center;
 }
 
 .myChart > .label {

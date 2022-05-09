@@ -15,7 +15,7 @@ const MyChart: React.FC<{ setA: string[]; setB: number[]; label: string }> = (pr
         label: label,
         data: setB,
         fill: true,
-        backgroundColor: "rgba(75,192,192,0.8)",
+        backgroundColor: "rgba(75,192,192,0.4)",
         borderColor: "rgba(75,192,192,1)",
       },
     ],
