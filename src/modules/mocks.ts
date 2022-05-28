@@ -103,7 +103,7 @@ export const demoTrades = [
     direction: "LONG",
     entryOrder: 1.4036,
     entryOrderStopOrderDifference: 0.00261,
-    id: "7f6dbbed527",
+    id: "7f6dbbed5271",
     lotSize: 25000,
     profitTargetOrder: 1.4092,
     profitToLossRatio: 2,

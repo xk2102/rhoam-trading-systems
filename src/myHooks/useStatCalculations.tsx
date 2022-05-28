@@ -48,25 +48,43 @@ export const useStatCalculations = () => {
   };
 
   const calculateFills = (trades: trade[]): { totalEntryFills: number; totalStopFills: number; totalProfitTargetFills: number; totalExitFills: number } => {
-    let totalEntryFills = 0;
-    let totalStopFills = 0;
-    let totalProfitTargetFills = 0;
-    let totalExitFills = 0;
+    // let totalEntryFills = 0;
+    // let totalStopFills = 0;
+    // let totalProfitTargetFills = 0;
+    // let totalExitFills = 0;
 
-    trades.forEach((trade) => {
-      if (trade.entryFill !== 0) {
-        totalEntryFills += 1;
-      }
-      if (trade.stopFill !== 0) {
-        totalStopFills += 1;
-      }
-      if (trade.profitTargetFill !== 0) {
-        totalProfitTargetFills += 1;
-      }
-      if (trade.exitFill !== 0) {
-        totalExitFills += 1;
-      }
-    });
+    // trades.forEach((trade) => {
+    //   if (trade.entryFill !== 0) {
+    //     totalEntryFills += 1;
+    //   }
+    //   if (trade.stopFill !== 0) {
+    //     totalStopFills += 1;
+    //   }
+    //   if (trade.profitTargetFill !== 0) {
+    //     totalProfitTargetFills += 1;
+    //   }
+    //   if (trade.exitFill !== 0) {
+    //     totalExitFills += 1;
+    //   }
+    // });
+
+    const totalEntryFills = trades.reduce((total, trade) => {
+      if (trade.entryFill !== 0) return total + 1;
+      return total;
+    }, 0);
+    const totalStopFills = trades.reduce((total, trade) => {
+      if (trade.stopFill !== 0) return total + 1;
+      return total;
+    }, 0);
+    const totalProfitTargetFills = trades.reduce((total, trade) => {
+      if (trade.profitTargetFill !== 0) return total + 1;
+      return total;
+    }, 0);
+    const totalExitFills = trades.reduce((total, trade) => {
+      if (trade.exitFill !== 0) return total + 1;
+      return total;
+    }, 0);
+
     return { totalEntryFills, totalStopFills, totalProfitTargetFills, totalExitFills };
   };
 
@@ -101,16 +119,26 @@ export const useStatCalculations = () => {
   };
 
   const calculateSlippages = (trades: trade[]): { totalEntrySlippage: number; totalStopSlippage: number; totalProfitTargetSlippage: number } => {
-    let totalEntrySlippage = 0;
-    let totalStopSlippage = 0;
-    let totalProfitTargetSlippage = 0;
-    let totalSlippage = 0;
-    trades.forEach((trade) => {
-      totalEntrySlippage += trade.entrySlippage;
-      totalStopSlippage += trade.stopSlippage;
-      totalProfitTargetSlippage += trade.profitTargetSlippage;
-    });
-    totalSlippage += totalEntrySlippage + totalStopSlippage + totalProfitTargetSlippage;
+    // let totalEntrySlippage = 0;
+    // let totalStopSlippage = 0;
+    // let totalProfitTargetSlippage = 0;
+    // let totalSlippage = 0;
+    // trades.forEach((trade) => {
+    //   totalEntrySlippage += trade.entrySlippage;
+    //   totalStopSlippage += trade.stopSlippage;
+    //   totalProfitTargetSlippage += trade.profitTargetSlippage;
+    // });
+    const totalEntrySlippage = trades.reduce((total, trade) => {
+      return total + trade.entrySlippage;
+    }, 0);
+    const totalStopSlippage = trades.reduce((total, trade) => {
+      return total + trade.stopSlippage;
+    }, 0);
+    const totalProfitTargetSlippage = trades.reduce((total, trade) => {
+      return total + trade.profitTargetSlippage;
+    }, 0);
+
+    const totalSlippage = totalEntrySlippage + totalStopSlippage + totalProfitTargetSlippage;
     return { totalEntrySlippage, totalStopSlippage, totalProfitTargetSlippage };
   };
 
